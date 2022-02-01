@@ -14,19 +14,19 @@ export default class Login extends React.Component {
       nome: '',
       loading: false,
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    /* this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);  troquei as funções abaixo para arrow function */
   }
 
-  handleChange(event) {
+  handleChange = (e) => {
     const { nome } = this.state;
-    this.setState({ nome: event.target.value });
+    this.setState({ nome: e.target.value });
     if (nome.length + 1 >= MIN_CHARACTERS) {
       this.setState({ isLoginButtonDisabled: false });
     }
   }
 
-  async handleClick() {
+  handleClick = async () => {
     const { nome } = this.state;
     this.setState({ loading: true });
     await createUser({ name: nome });
