@@ -21,7 +21,7 @@ export default class Album extends React.Component {
   getAlbunsMusics = async () => {
     const { match: { params: { id } } } = this.props;
     const data = await getMusics(id);
-    /* console.log(...data[1]); */
+    /* console.log(...data); */
     /* console.log(data.trackName); */
     this.setState({
       artistData: data[0],
@@ -46,7 +46,8 @@ export default class Album extends React.Component {
             <MusicCard
               previewUrl={ song.previewUrl }
               songTitle={ song.trackName }
-              key={ song.trackName }
+              trackId={ song.trackId }
+              key={ song.trackId }
             />
           ))}
           ;
