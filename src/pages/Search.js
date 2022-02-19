@@ -17,7 +17,7 @@ export default class Search extends React.Component {
     };
   }
 
-  /* Retirei o bind, após mudar a função handleChange para Arro Function */
+  /* Retirei o .bind, após mudar a função handleChange para Arro Function */
   handleChange = (event) => {
     const { artist } = this.state;
     this.setState({
