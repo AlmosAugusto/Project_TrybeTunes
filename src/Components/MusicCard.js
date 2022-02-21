@@ -22,6 +22,7 @@ export default class MusicCard extends React.Component {
       this.setState({
         loading: true,
       });
+
       const listOfFavoriteSongs = await getFavoriteSongs();
       /* console.log(listOfFavoriteSongs); */
       this.setState({
