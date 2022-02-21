@@ -10,15 +10,14 @@ export default class Album extends React.Component {
     this.state = {
       artistData: [],
       allSongs: [],
-
     };
   }
 
   componentDidMount() {
-    this.getAlbunsMusics();
+    this.getAlbunsSongs();
   }
 
-  getAlbunsMusics = async () => {
+  getAlbunsSongs = async () => {
     const { match: { params: { id } } } = this.props;
     const data = await getMusics(id);
     /* console.log(...data); */
@@ -48,6 +47,7 @@ export default class Album extends React.Component {
               songTitle={ song.trackName }
               trackId={ song.trackId }
               key={ song.trackId }
+              song={ song }
             />
           ))}
           ;
@@ -56,6 +56,7 @@ export default class Album extends React.Component {
     );
   }
 }
+
 Album.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
