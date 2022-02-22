@@ -9,7 +9,6 @@ export default class MusicCard extends React.Component {
     this.state = {
       loading: false,
       isFavoriteChecked: false,
-      favoriteSongs: [],
     };
   }
 
@@ -19,37 +18,37 @@ export default class MusicCard extends React.Component {
 
     getFavoriteFunc = async () => {
       const { song } = this.props;
-      this.setState({
-        loading: true,
-      });
-
+      this.setState({ loading: true });
       const listOfFavoriteSongs = await getFavoriteSongs();
       /* console.log(listOfFavoriteSongs); */
+      const isFavorited = listOfFavoriteSongs.find(
+        (favoritedSong) => favoritedSong.trackId === song.trackId,
+      );
       this.setState({
-        favoriteSongs: listOfFavoriteSongs,
+        isFavoriteChecked: isFavorited,
         loading: false,
-      }, () => {
-        const { favoriteSongs } = this.state;
-        /* console.log(song);
-        console.log(favoriteSongs); */
-        favoriteSongs.find((favoriteSong) => favoriteSong.trackId === song.trackId && (
-          this.setState({ isFavoriteChecked: true })));
       });
     };
 
-  /* Consultei o rep do Carlos Rosa da turma 17 para o requisito concluir esse requisito --> https://github.com/tryber/sd-017-project-trybetunes/pull/111/files */
-  handleChange = async (event, song) => {
+  /* Consultei o rep do Antonio Sabino da turma 17 para  concluir esse requisito --> https://github.com/tryber/sd-017-project-trybetunes/pull/151/files */
+  handleChange = async ({ target }) => {
+    const { checked } = target;
+    const { song, update } = this.props;
     this.setState({
       loading: true,
-      isFavoriteChecked: event,
+      isFavoriteChecked: checked,
     });
-    const isValid = (event === true) ? await addSong(song) : await removeSong(song);
-    this.setState({ loading: false });
-    return isValid;
+    if (checked === true) {
+      await addSong(song);
+      this.setState({ loading: false });
+    } else {
+      await removeSong(song);
+      this.setState({ loading: false }, update);
+    }
   }
 
   render() {
-    const { previewUrl, songTitle, trackId, song } = this.props;
+    const { previewUrl, songTitle, trackId } = this.props;
     const { loading, isFavoriteChecked } = this.state;
     return (
       <div>
@@ -63,12 +62,9 @@ export default class MusicCard extends React.Component {
               <input
                 data-testid={ `checkbox-music-${trackId}` }
                 type="checkbox"
-                name="favoriteSong"
+                id="favoriteSong"
                 checked={ isFavoriteChecked }
-                onChange={ (event) => this.handleChange(
-                  event.target.checked,
-                  song,
-                ) }
+                onChange={ this.handleChange }
               />
             </label>
             {/* Codigo ja montado na descrição do requisito 7 */}

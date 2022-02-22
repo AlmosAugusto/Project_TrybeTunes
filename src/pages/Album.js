@@ -56,7 +56,7 @@ export default class Album extends React.Component {
     );
   }
 }
-
+/* Visto na aula de Revisão do Rod */
 Album.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
