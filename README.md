@@ -6,7 +6,7 @@
     <strong>:memo: Sobre o projeto</strong>
   </summary><br>
   
-  - Projeto TrybeTunes desenvolvido na Trybe.
+  - Projeto TrybeTunes desenvolvido na Trybe no módulo de Front-End.
   
   - Desenvolver uma aplicação musical, onde é possivel consultar dentre albúns, músicas e artistas, podendo ouvir uma preview das músicas e favoritá-las.
 </details>
