@@ -27,7 +27,7 @@
   <summary>
     <strong>Habilidades</strong>
   </summary><br>
-  Neste projeto, verificamos se voce é capaz de:
+  Neste projeto, foi verificado como:
 
   * Fazer requisições e consumir dados vindos de uma `API`;
 
