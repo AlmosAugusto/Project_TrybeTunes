@@ -1,13 +1,43 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+<h4><strong>Projet Trybe Tunes</strong></h4
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+<details>
+  <summary>
+    <strong>:memo: Sobre o projeto</strong>
+  </summary><br>
+  
+  - Projeto TrybeTunes desenvolvido na Trybe
+  
+  - Desenvolver uma aplicação musical, onde é possivel consultar dentre albúns, músicas e artistas, podendo ouvir uma preview das músicas e favoritá-las.
+</details>
+
+<details>
+  <summary>
+    <strong>:wrench: Tecnologias utilizadas</strong>
+  </summary><br>
+  
+  - JavaScript
+  - HTML
+  - CSS
+  - React
+ 
+</details>
+
+<details>
+  <summary>
+    <strong>Requisitos</strong>
+  </summary><br>
+  
+  # Requisitos Obrigatórios
+
+
+## 1. Implemente a função `getSpeciesByIds`
+
+<details>
+  <summary>
+  Busque as espécies dos animais por meio de um <code>id</code> e retorne um array contendo todos os animais dessa espécie.
+  </summary> <br />
+
+- Faça com que a função `getSpeciesByIds` possa receber vários parâmetros;
+
+- Retorne um array vazio se a função não receber um `id`;
