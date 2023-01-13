@@ -28,16 +28,4 @@
     <strong>Requisitos</strong>
   </summary><br>
   
-  # Requisitos Obrigatórios
 
-
-## 1. Implemente a função `getSpeciesByIds`
-
-<details>
-  <summary>
-  Busque as espécies dos animais por meio de um <code>id</code> e retorne um array contendo todos os animais dessa espécie.
-  </summary> <br />
-
-- Faça com que a função `getSpeciesByIds` possa receber vários parâmetros;
-
-- Retorne um array vazio se a função não receber um `id`;
