@@ -1,4 +1,4 @@
-# Project Trybe Tunes
+# Boas vindas ao repositório do projeto TrybeTunes!
 
 
 <details>
