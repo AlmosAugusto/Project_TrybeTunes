@@ -25,7 +25,7 @@
 
 <details>
   <summary>
-    <strong>Requisitos</strong>
+    <strong>Habilidades</strong>
   </summary><br>
   Neste projeto, verificamos se voce é capaz de:
 
